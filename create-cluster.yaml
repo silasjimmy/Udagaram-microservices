@@ -1,0 +1,26 @@
+kind: ClusterConfig
+apiVersion: eksctl.io/v1alpha5
+
+metadata:
+  name: udagram-eks-cluster-dev
+  region: us-east-1
+  version: "1.22"
+
+iam:
+  serviceRoleARN: "arn:aws:iam::866324120852:role/eksClusterRole"
+
+vpc:
+  id: "vpc-0e5e192315949af5e"
+  cidr: "10.0.0.0/16"
+  securityGroup: "sg-06bc7d831c1794b07"
+  subnets:
+    public:
+      us-east-1c:
+        id: "subnet-0aac1d371c0d6c36e"
+        cidr: "10.0.32.0/20"
+      us-east-1b:
+        id: "subnet-03e905374e89c92d9"
+        cidr: "10.0.16.0/20"
+      us-east-1a:
+        id: "subnet-060a622f81b2f7f98"
+        cidr: "10.0.0.0/20"
